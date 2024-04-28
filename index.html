@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CTF Test</title>
+        <meta name="description" content="Our first page">
+        <meta name="keywords" content="html tutorial template">
+        <script src="encriptor.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+        <script src="main.js"></script>
+    </head>
+        <body>
+            <div class="main">
+                <div class="inputFields">
+                    <div class="block">
+                        <h1 class="inputTitle">Input</h1>
+                        <div class="inputDiv">
+                            <input tabindex="-1" class="input" id="input" placeholder="Secret"/>
+                            <!-- !!CLUE!! first 6 decimals in pi !!CLUE!! -->
+                            <input tabindex="-1" class="submit" id="submit" type="button" value="submit" onclick="inputValue(document.getElementById('input').value, 0)">'
+                            <p id="errormsg0" class="errormsg"></p>
+                        </div>
+                        <div style="visibility: hidden;" id="unavailable0" class="unavailable"></div>
+                    </div>
+
+                    <div class="block">
+                        <h1 class="inputTitle">Input 2</h1>
+                        <div class="inputDiv">
+                            <input tabindex="-1" class="input" id="input2" placeholder="Secret"/>
+                            <input tabindex="-1" class="submit" id="submit2" type="button" value="submit" onclick="inputValue(document.getElementById('input2').value, 1)">
+                            <p id="errormsg1" class="errormsg"></p>
+                        </div>
+                        <div id="unavailable1" class="unavailable"></div>
+                    </div>
+
+                    <div class="block">
+                        <h1 class="inputTitle">Input 3</h1>
+                        <div class="inputDiv">
+                            <input tabindex="-1" class="input" id="input3" placeholder="Secret"/>
+                            <input tabindex="-1" class="submit" id="submit3" type="button" value="submit" onclick="inputValue(document.getElementById('input3').value, 2)">
+                            <p id="errormsg2" class="errormsg"></p>
+                        </div>
+                        <div id="unavailable2" class="unavailable"></div>
+                    </div>
+                    <h1 id="output"></h1>
+                    <pre id="hiddenCode">
+                        <code id="hiddenCodeText">
+                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </body>
+</html>
+
+<style>
+body{
+    margin: 0;
+    background-image: url(matrix.gif);
+}
+.main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.inputFields{
+    height: 20em;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+}
+.block{
+    height: 9em;
+    width: 15em;
+    display: flex;
+    padding: 2em;
+    background-color: rgba(0,0,0,0.75);
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    margin: 2em;
+    position: relative;
+}
+.inputTitle{
+    color: white;
+}
+.input{
+    width: 10em;
+}
+.submit{
+    width: 6em;
+    height: 2.5em;
+    border: 0.15em solid white;
+    border-radius: 3em;
+    background-color: rgba(0,0,0,0.0);
+    color: white;
+}
+.errormsg{
+    position: absolute;
+}
+.unavailable{
+height: 9em;
+width: 15em;
+background-color: rgba(0,0,0,0.5);
+position: absolute;
+}
+#output{
+    position:absolute;
+    top: 8em;
+    left: 4.5em;
+    bottom: 2em;
+    max-width: 14em;
+    font-weight: bold;
+    font-size:2.4em;
+    color: white;
+    margin-left: 2em;
+    align-self: start;
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.7);
+    padding: 1em;
+}
+#hiddenCode{
+    pointer-events: none;
+    position: absolute;
+    bottom: 30em;
+}
+</style>
